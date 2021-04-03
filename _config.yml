@@ -57,7 +57,7 @@ plugins:
 # Github config
 lsi: false
 safe: true
-source: ~/gatshub.github.io/
+source: /Users/cyril/Dev/Github/gatshub.github.io/
 incremental: false
 highlighter: rouge
 gist:
