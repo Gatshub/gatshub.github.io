@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Le Panier de la Sablaise — Cyril L.</title>
+  <meta name="description" content="Étude de cas : application mobile et API pour une poissonnerie de bord de mer.">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <div class="enveloppe">
+
+    <header class="entete">
+      <a class="marque" href="/">Cyril L.</a>
+      <nav class="nav">
+        <a href="/">Accueil</a>
+        <a href="/projets.html">Projets</a>
+        <a href="/sablaise.html" aria-current="page">Sablaise</a>
+      </nav>
+    </header>
+
+    <main class="etude">
+
+      <h1>Le Panier de la Sablaise</h1>
+      <span class="etiquette meta">Commande · Application mobile et API</span>
+
+      <h2>Le contexte</h2>
+      <p>Une poissonnerie de bord de mer voulait prolonger son comptoir : proposer des
+      paniers de poisson accompagnés de recettes, que l'on réserve à l'avance et que l'on
+      vient retirer sur place.</p>
+
+      <h2>Ce qui a été réalisé</h2>
+      <p>Une application mobile et l'API qui la sert, écrites comme un seul système :</p>
+      <ul>
+        <li><strong>Application mobile</strong> — catalogue des paniers, fiche détaillée
+        (contenu du panier, allergènes, valeurs), fiches recettes, et formulaire de
+        demande avec point de retrait, date et quantités.</li>
+        <li><strong>API</strong> — offres et paniers, recettes, demandes, et la
+        configuration que l'application consomme plutôt que de la recopier.</li>
+        <li><strong>Cycle de vie des offres</strong> — publication et retrait pilotés
+        depuis l'administration, chaque changement étant tracé.</li>
+      </ul>
+
+      <h2>L'état</h2>
+      <p>L'application est installée et utilisée sur un appareil réel. L'API est
+      couverte par des tests automatisés, côté serveur comme côté application. Certaines
+      fonctions — le choix du poisson, le paiement — sont prévues dans la conception mais
+      volontairement absentes de l'interface à ce stade.</p>
+
+      <div class="encadre">
+        <p>La marque et les visuels de ce projet appartiennent à son commanditaire ; ils
+        ne sont pas publiés ici. Cette page décrit le travail, pas la vitrine.</p>
+      </div>
+
+    </main>
+
+    <footer class="pied">
+      <p><a href="/projets.html">← Retour aux projets</a> · Cyril L. —
+      <a href="https://github.com/Gatshub">github.com/Gatshub</a></p>
+    </footer>
+
+  </div>
+</body>
+</html>
