@@ -1,0 +1,249 @@
+/* ==========================================================================
+   gatshub.github.io — feuille unique
+   Site statique écrit à la main. Aucune dépendance, aucune police téléchargée.
+   Sommaire :
+     1. Variables (palette + typographie)
+     2. Base (reset léger, corps)
+     3. Mise en page (conteneur, en-tête, pied)
+     4. Typographie (titres, liens, étiquettes)
+     5. En-tête et navigation
+     6. Accueil
+     7. Cartes de projet
+     8. Étude de cas (Sablaise)
+     9. Pied de page
+    10. 404
+    11. Responsive
+    12. Préférences et accessibilité
+   ========================================================================== */
+
+/* 1. Variables ----------------------------------------------------------- */
+:root {
+  /* Palette : chaude, sobre, contrastes vérifiés sur le papier. */
+  --encre:     #211D18; /* texte : ~15:1 sur le fond */
+  --papier:    #FBFAF7; /* fond de page */
+  --carte:     #F4F1EA; /* fond alterné (cartes, encadrés) */
+  --filet:     #E2DCD2; /* traits, séparateurs */
+  --secondaire:#6E6559; /* texte discret : ~5,5:1 (>= 4,5 exigé) */
+  --accent:    #8C6A3F; /* liens et accents : ~5,2:1 sur papier */
+
+  /* Typographie : polices système uniquement (aucun téléchargement). */
+  --serif: Georgia, "Times New Roman", serif;
+  --sans:  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --mono:  ui-monospace, Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* Rythme : une colonne, largeur confortable de lecture (~44 rem). */
+  --largeur: 44rem;
+  --pad: 1.5rem;
+}
+
+/* 2. Base ---------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0 var(--pad);
+  background: var(--papier);
+  color: var(--encre);
+  font-family: var(--sans);
+  font-size: 1.0625rem;   /* ~17px : plus lisible que 16 sur mobile */
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+}
+
+/* 3. Mise en page -------------------------------------------------------- */
+.enveloppe {
+  max-width: var(--largeur);
+  margin: 0 auto;
+  padding: 3rem 0 4rem;
+}
+
+/* 4. Typographie --------------------------------------------------------- */
+h1, h2, h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 0.6em;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: 2.1rem; }
+h2 { font-size: 1.4rem; margin-top: 2.6rem; }
+h3 { font-size: 1.1rem; margin-top: 1.6rem; }
+
+p { margin: 0 0 1.1em; }
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+a:hover { text-decoration-thickness: 2px; }
+
+/* Étiquettes : petites capitales monospace, discrètes mais lisibles. */
+.etiquette {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--secondaire);
+}
+
+/* 5. En-tête et navigation ----------------------------------------------- */
+.entete {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--filet);
+}
+
+.entete .marque {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--encre);
+  text-decoration: none;
+}
+
+.nav a {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--secondaire);
+  text-decoration: none;
+  margin-left: 1.1rem;
+}
+.nav a:first-child { margin-left: 0; }
+.nav a:hover,
+.nav a[aria-current="page"] { color: var(--encre); }
+
+/* 6. Accueil ------------------------------------------------------------- */
+.edito { margin-top: 2.2rem; }
+
+.edito .chapeau {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  line-height: 1.45;
+  color: var(--encre);
+}
+
+.edito p { max-width: 40rem; }
+
+/* 7. Cartes de projet ---------------------------------------------------- */
+.projets {
+  list-style: none;
+  margin: 1.4rem 0 0;
+  padding: 0;
+}
+
+.projet {
+  padding: 1.2rem 0;
+  border-top: 1px solid var(--filet);
+}
+.projet:last-child { border-bottom: 1px solid var(--filet); }
+
+.projet h3 { margin: 0 0 0.25rem; }
+.projet .nature {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.projet p { margin: 0; color: var(--secondaire); }
+
+/* Lien de dépôt : discret, aligné sur la ligne du titre. */
+.projet .depot {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.projet .depot:hover { text-decoration: underline; }
+
+/* 8. Étude de cas (Sablaise) --------------------------------------------- */
+.etude .meta {
+  display: block;
+  margin: 0.4rem 0 1.6rem;
+}
+
+.etude h2 { margin-top: 2.4rem; }
+
+.encadre {
+  background: var(--carte);
+  border: 1px solid var(--filet);
+  border-radius: 4px;
+  padding: 1.1rem 1.3rem;
+  margin: 1.4rem 0;
+}
+.encadre p:last-child { margin-bottom: 0; }
+
+/* 9. Pied de page -------------------------------------------------------- */
+.pied {
+  margin-top: 4rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--filet);
+  font-size: 0.86rem;
+  color: var(--secondaire);
+}
+.pied a { color: var(--secondaire); }
+
+.boutons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.8rem;
+}
+.bouton {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--encre);
+  border: 1px solid var(--filet);
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+}
+.bouton:hover { border-color: var(--accent); color: var(--accent); }
+
+/* 10. 404 ---------------------------------------------------------------- */
+.erreur {
+  text-align: left;
+  margin-top: 3rem;
+}
+.erreur .code {
+  font-family: var(--serif);
+  font-size: 3.4rem;
+  line-height: 1;
+  margin: 0 0 0.5rem;
+}
+
+/* 11. Responsive --------------------------------------------------------- */
+@media (max-width: 480px) {
+  body { font-size: 1rem; padding: 0 1.1rem; }
+  .enveloppe { padding: 2rem 0 3rem; }
+  h1 { font-size: 1.7rem; }
+  h2 { font-size: 1.25rem; }
+  .entete { flex-direction: column; }
+  .nav a { margin-left: 0; margin-right: 1.1rem; }
+}
+
+/* 12. Préférences et accessibilité --------------------------------------- */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+::selection { background: #EADFC8; color: var(--encre); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
