@@ -8,7 +8,7 @@ Servi par GitHub Pages à l'adresse <https://gatshub.github.io/>.
 | Fichier | Rôle |
 |---|---|
 | `index.html` | Accueil : édito, aperçu des projets, lien vers la Sablaise |
-| `projets.html` | Portefeuille de projets (hex-tui, sudoku-tui) |
+| `projets.html` | Portefeuille de projets (hex-tui, sudoku-tui, sudoku-mignon) |
 | `sablaise.html` | Étude de cas « Le Panier de la Sablaise » |
 | `404.html` | Page d'erreur, à la charte, avec retour à l'accueil |
 | `assets/style.css` | Feuille de style unique (palette + typographie système) |
